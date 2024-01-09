@@ -54,4 +54,14 @@ Deno.test('Mongo', async (t) => {
         const z = await mongo.deleteMany({ status: 'todo' });
         assertEquals(z, 2);
     });
+    // await t.step('task-merge', async () => {
+    //     let z = await mongo.act('task_merge', { documents: [{ type: "R", word: "mother", last: 1, next: 2, level: 3}] });
+    //     assertEquals(z.mergeNumber, 1);
+    //     z = await mongo.act('task_merge', { documents: [{ type: "R", word: "mother", last: 3, next: 4, level: 5}] });
+    //     assertEquals(z.mergeNumber, 1);
+    //     z = await mongo.act('task_merge', { documents: [{ type: "R", word: "mother", last: 1, next: 2, level: 5}] });
+    //     assertEquals(z.mergeNumber, 0);
+    //     z = await mongo.deleteMany({ type: "R", word: "mother" });
+    //     assertEquals(z, 1);
+    // })
 })
