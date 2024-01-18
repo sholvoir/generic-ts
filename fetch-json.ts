@@ -7,5 +7,9 @@ export const fetchJson = async (input: string|URL|Request, body?: any, method: H
         undefined;
     const resp = await fetch(input, init);
     if (!resp.ok) return undefined;
-    return await resp.json();
+    const text = await resp.text();
+    if (!text) return undefined;
+    try { return JSON.parse(text) } catch { return undefined }
 }
+
+if (import.meta.main) console.log(await fetchJson('http://localhost:8000/test'));
