@@ -1,4 +1,4 @@
-import { assertEquals } from "https://deno.land/std@0.137.0/testing/asserts.ts";
+import { assertEquals } from "@std/assert";
 import {
     camel2pascal, camel2snake, camel2kebab, pascal2snake, pascal2kebab, snake2kebab,
     pascal2camel, snake2camel, kebab2camel, snake2pascal, kebab2pascal, kebab2snake
