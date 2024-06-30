@@ -1,7 +1,7 @@
 {
   "lock": false,
   "name": "@sholvoir/generic",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "imports": {
     "@std/assert": "jsr:@std/assert@^0.226.0",
     "@std/encoding": "jsr:@std/encoding@^0.224.3",
@@ -11,6 +11,7 @@
     "./http-method": "./http-method.ts",
     "./log": "./log.ts",
     "./trans-case": "./trans-case.ts",
-    "./jwt": "./jwt.ts"
+    "./jwt": "./jwt.ts",
+    "./blob": "./blob.ts"
   }
 }
