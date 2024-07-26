@@ -1,5 +1,5 @@
 // deno-lint-ignore-file no-explicit-any
-import type { HTTPMethod } from "./http-method.ts";
+import type { HTTPMethod } from "./http.ts";
 
 const delay = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
 
