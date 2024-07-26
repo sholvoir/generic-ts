@@ -132,15 +132,15 @@ export const STATUS_CODE = {
     NetworkAuthenticationRequired: 511,
 } as const;
 
-export const ok = new Response();
-export const notFound = new Response(undefined, { status: STATUS_CODE.NotFound });
-export const forbidden = new Response(undefined, { status: STATUS_CODE.Forbidden });
-export const badRequest = new Response(undefined, { status: STATUS_CODE.BadRequest });
-export const internalServerError = new Response(undefined, { status: STATUS_CODE.InternalServerError });
+export const ok: Response = new Response();
+export const notFound: Response = new Response(undefined, { status: STATUS_CODE.NotFound });
+export const forbidden: Response = new Response(undefined, { status: STATUS_CODE.Forbidden });
+export const badRequest: Response = new Response(undefined, { status: STATUS_CODE.BadRequest });
+export const internalServerError: Response = new Response(undefined, { status: STATUS_CODE.InternalServerError });
 
 export const responseInit: ResponseInit = { headers: [['Content-Type', 'application/json']] };
-export const requestInit = (body: any, method: HTTPMethod = 'POST') => ({
+export const requestInit = (body: any, method: HTTPMethod = 'POST'): RequestInit => ({
     method,
     headers: [['Content-Type', 'application/json']],
     body: JSON.stringify(body)
-}) as RequestInit;
+});
