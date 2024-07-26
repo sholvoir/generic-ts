@@ -1,4 +1,6 @@
+// deno-lint-ignore-file no-explicit-any
 export type HTTPMethod = 'CONNECT' | 'DELETE' | 'GET' | 'HEAD' | 'OPTIONS' | 'PATCH' | 'POST' | 'PUT' | 'TRACE';
+
 export const STATUS_CODE = {
     /** RFC 7231, 6.2.1 */
     Continue: 100,
@@ -129,3 +131,16 @@ export const STATUS_CODE = {
     /** RFC 6585, 6 */
     NetworkAuthenticationRequired: 511,
 } as const;
+
+export const ok = new Response();
+export const notFound = new Response(undefined, { status: STATUS_CODE.NotFound });
+export const forbidden = new Response(undefined, { status: STATUS_CODE.Forbidden });
+export const badRequest = new Response(undefined, { status: STATUS_CODE.BadRequest });
+export const internalServerError = new Response(undefined, { status: STATUS_CODE.InternalServerError });
+
+export const responseInit: ResponseInit = { headers: [['Content-Type', 'application/json']] };
+export const requestInit = (body: any, method: HTTPMethod = 'POST') => ({
+    method,
+    headers: [['Content-Type', 'application/json']],
+    body: JSON.stringify(body)
+}) as RequestInit;
