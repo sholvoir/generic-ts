@@ -1,16 +1,17 @@
 {
-  "lock": false,
-  "name": "@sholvoir/generic",
-  "version": "0.0.6",
-  "imports": {
-    "@std/assert": "jsr:@std/assert@^1.0.2",
-    "@std/encoding": "jsr:@std/encoding@^1.0.1",
-    "@wok/djwt": "jsr:@wok/djwt@^3.0.2"
-  },
-  "exports": {
-    "./http": "./http.ts",
-    "./trans-case": "./trans-case.ts",
-    "./jwt": "./jwt.ts",
-    "./blob": "./blob.ts"
-  }
+    "lock": false,
+    "name": "@sholvoir/generic",
+    "version": "0.0.8",
+    "imports": {
+        "@std/assert": "jsr:@std/assert@^1.0.2",
+        "@std/encoding": "jsr:@std/encoding@^1.0.1",
+        "@wok/djwt": "jsr:@wok/djwt@^3.0.2"
+    },
+    "exports": {
+        "./http": "./http.ts",
+        "./trans-case": "./trans-case.ts",
+        "./jwt": "./jwt.ts",
+        "./blob": "./blob.ts",
+        "./update-version": "./update-version.ts"
+    }
 }
