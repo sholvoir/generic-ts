@@ -1,10 +1,10 @@
 {
     "lock": false,
     "name": "@sholvoir/generic",
-    "version": "0.0.8",
+    "version": "0.0.9",
     "imports": {
-        "@std/assert": "jsr:@std/assert@^1.0.2",
-        "@std/encoding": "jsr:@std/encoding@^1.0.1",
+        "@std/assert": "jsr:@std/assert@^1.0.6",
+        "@std/encoding": "jsr:@std/encoding@^1.0.5",
         "@wok/djwt": "jsr:@wok/djwt@^3.0.2"
     },
     "exports": {
