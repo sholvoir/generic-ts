@@ -132,7 +132,8 @@ export const STATUS_CODE = {
     NetworkAuthenticationRequired: 511,
 } as const;
 
-export const responseInit: ResponseInit = { headers: [['Content-Type', 'application/json']] };
+export const jsonHeader = (): Headers => new Headers({"Content-Type": "application/json"});
+export const responseInit: ResponseInit = { headers: jsonHeader() };
 export const ok: Response = new Response();
 export const notFound: Response = new Response(undefined, { status: STATUS_CODE.NotFound });
 export const forbidden: Response = new Response(undefined, { status: STATUS_CODE.Forbidden });
@@ -140,8 +141,5 @@ export const badRequest: Response = new Response(undefined, { status: STATUS_COD
 export const internalServerError: Response = new Response(undefined, { status: STATUS_CODE.InternalServerError });
 export const jsonResponse = (body: any): Response => new Response(JSON.stringify(body), responseInit);
 
-export const requestInit = (body: any, method: HTTPMethod = 'POST'): RequestInit => ({
-    method,
-    headers: [['Content-Type', 'application/json']],
-    body: JSON.stringify(body)
-});
+export const requestInit = (body: any, method: HTTPMethod = 'POST', headers?: HeadersInit): RequestInit =>
+    ({ method, headers: headers ?? jsonHeader(), body: JSON.stringify(body) });
