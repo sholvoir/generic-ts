@@ -1,4 +1,4 @@
-import { versionpp } from "./version++.ts";
+import { versionpp } from "./versionpp.ts";
 
 // deno-lint-ignore-file no-explicit-any
 const path = './deno.json';
