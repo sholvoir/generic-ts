@@ -139,6 +139,7 @@ export const notFound: Response = new Response(undefined, { status: STATUS_CODE.
 export const noContent: Response = new Response(undefined, { status: STATUS_CODE.NoContent });
 export const forbidden: Response = new Response(undefined, { status: STATUS_CODE.Forbidden });
 export const badRequest: Response = new Response(undefined, { status: STATUS_CODE.BadRequest });
+export const methodNotAllowed: Response = new Response(undefined, { status: STATUS_CODE.MethodNotAllowed });
 export const internalServerError: Response = new Response(undefined, { status: STATUS_CODE.InternalServerError });
 export const jsonResponse = (body: any): Response => new Response(JSON.stringify(body), responseInit);
 
