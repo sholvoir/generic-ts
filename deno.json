@@ -1,7 +1,7 @@
 {
     "lock": false,
     "name": "@sholvoir/generic",
-    "version": "0.1.1",
+    "version": "0.2.0",
     "imports": {
         "@std/assert": "jsr:@std/assert@^1.0.8",
         "@std/encoding": "jsr:@std/encoding@^1.0.5",
@@ -15,7 +15,6 @@
         "./jwt": "./jwt.ts",
         "./trans-case": "./trans-case.ts",
         "./twilio": "./twilio.ts",
-        "./mongo": "./mongo.ts",
         "./update-version": "./update-version.ts",
         "./versionpp": "./versionpp.ts",
         "./wait": "./wait.ts"

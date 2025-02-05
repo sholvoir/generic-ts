@@ -25,4 +25,6 @@ export class JWT {
     static decode(token: string): [unknown, Payload, Uint8Array] {
         return decode(token);
     }
-}
+};
+
+export type { Payload }
