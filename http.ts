@@ -145,8 +145,8 @@ export const jsonHeader = (): Headers =>
     new Headers({ "Content-Type": "application/json" });
 export const emptyResponse = (status?: STATUS_CODE): Response =>
     new Response(undefined, status && { status });
-export const jsonResponse = (body: any): Response =>
-    new Response(JSON.stringify(body), { headers: jsonHeader() });
+export const jsonResponse = (body: any, status?: STATUS_CODE): Response =>
+    new Response(JSON.stringify(body), { headers: jsonHeader(), status });
 
 export const requestInit = (
     body: any,
