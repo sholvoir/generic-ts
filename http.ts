@@ -154,6 +154,6 @@ export const requestInit = (
     headers?: HeadersInit
 ): RequestInit => {
     const h = new Headers(headers)
-    if (headers) h.append("Content-Type", "application/json");
+    if (!h.has("Content-Type")) h.append("Content-Type", "application/json");
     return { method, headers: h, body: JSON.stringify(body) };
 }
