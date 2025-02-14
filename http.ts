@@ -152,8 +152,8 @@ export const requestInit = (
     body: any,
     method: HTTPMethod = 'POST',
     headers?: HeadersInit
-): RequestInit => ({
-    method,
-    headers: headers ?? jsonHeader(),
-    body: JSON.stringify(body)
-});
+): RequestInit => {
+    const h = new Headers(headers)
+    if (headers) h.append("Content-Type", "application/json");
+    return { method, headers: h, body: JSON.stringify(body) };
+}
