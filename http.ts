@@ -157,3 +157,24 @@ export const requestInit = (
     if (!h.has("Content-Type")) h.append("Content-Type", "application/json");
     return { method, headers: h, body: JSON.stringify(body) };
 }
+
+export const getRes = async (
+    path: string,
+    params?: Record<string, string | undefined>,
+    init?: RequestInit
+): Promise<Response> => {
+    const url = new URL(path, location.href);
+    if (params) for (const [key, value] of Object.entries(params))
+        if (value) url.searchParams.append(key, value);
+    return await fetch(url, init);
+}
+
+export const getJson = async <T>(
+    path: string,
+    params?: Record<string, string | undefined>,
+    init?: RequestInit
+): Promise<T | undefined> => {
+    const res = await getRes(path, params, init);
+    if (!res.ok) return undefined;
+    return (await res.json()) as T;
+}
