@@ -160,21 +160,21 @@ export const requestInit = (
 
 export const getRes = async (
     path: string,
-    params?: Record<string, string | undefined | null>,
+    query?: Record<string, string>,
     init?: RequestInit
 ): Promise<Response> => {
     const url = new URL(path, location.href);
-    if (params) for (const [key, value] of Object.entries(params))
+    if (query) for (const [key, value] of Object.entries(query))
         if (value) url.searchParams.append(key, value);
     return await fetch(url, init);
 }
 
 export const getJson = async <T>(
     path: string,
-    params?: Record<string, string | undefined | null>,
+    query?: Record<string, string>,
     init?: RequestInit
 ): Promise<T | undefined> => {
-    const res = await getRes(path, params, init);
+    const res = await getRes(path, query, init);
     if (!res.ok) return undefined;
     return (await res.json()) as T;
 }
