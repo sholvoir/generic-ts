@@ -160,7 +160,7 @@ export const requestInit = (
 
 export const getRes = async (
     path: string,
-    query?: Record<string, string>,
+    query?: Record<string, string | undefined | null>,
     init?: RequestInit
 ): Promise<Response> => {
     const url = new URL(path, location.href);
@@ -171,7 +171,7 @@ export const getRes = async (
 
 export const getJson = async <T>(
     path: string,
-    query?: Record<string, string>,
+    query?: Record<string, string | undefined | null>,
     init?: RequestInit
 ): Promise<T | undefined> => {
     const res = await getRes(path, query, init);
