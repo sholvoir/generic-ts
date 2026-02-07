@@ -155,6 +155,16 @@ export const url = (
    return u;
 };
 
+export const jsonInit = (
+   body: any,
+   method: HTTPMethod = "POST",
+   headers?: HeadersInit,
+): RequestInit => {
+   const h = new Headers(headers);
+   h.set("Content-Type", "application/json");
+   return { method, body: JSON.stringify(body), headers: h };
+};
+
 export const getJson = async <T>(
    input: string | URL | Request,
    init?: RequestInit,
