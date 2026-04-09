@@ -155,6 +155,16 @@ export const url = (
    return u;
 };
 
+export const textInit = (
+   body: string,
+   method: HTTPMethod = "POST",
+   headers?: HeadersInit
+): RequestInit => {
+   const h = new Headers(headers);
+   h.set("Content-Type", "text/plain");
+   return { method, body, headers: h }
+}
+
 export const jsonInit = (
    body: any,
    method: HTTPMethod = "POST",
