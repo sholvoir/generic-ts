@@ -175,6 +175,15 @@ export const jsonInit = (
    return { method, body: JSON.stringify(body), headers: h };
 };
 
+export const getText = async (
+   input: string | URL | Request,
+   init?: RequestInit,
+): Promise<string | undefined> => {
+   const res = await fetch(input, init);
+   if (!res.ok) return undefined;
+   return await res.text();
+}
+
 export const getJson = async <T>(
    input: string | URL | Request,
    init?: RequestInit,
@@ -186,6 +195,9 @@ export const getJson = async <T>(
 
 export const emptyResponse = (status?: STATUS_CODE): Response =>
    new Response(undefined, status && { status });
+
+export const textResponse = (body: string, status?: STATUS_CODE): Response =>
+   new Response(body, { headers: textHeader, status });
 
 export const jsonResponse = (body: any, status?: STATUS_CODE): Response =>
    new Response(JSON.stringify(body), { headers: jsonHeader, status });

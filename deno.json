@@ -1,9 +1,9 @@
 {
    "lock": false,
    "name": "@sholvoir/generic",
-   "version": "0.4.4",
+   "version": "0.4.5",
    "imports": {
-      "@aws-sdk/client-s3": "npm:@aws-sdk/client-s3@^3.1028.0",
+      "@aws-sdk/client-s3": "npm:@aws-sdk/client-s3@^3.1030.0",
       "@std/assert": "jsr:@std/assert@^1.0.19",
       "@std/encoding": "jsr:@std/encoding@^1.0.10",
       "@wok/djwt": "jsr:@wok/djwt@^3.0.2",
